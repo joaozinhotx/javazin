@@ -72,8 +72,7 @@ console.log("O usuário " + conta.usuario + " possui nível " + conta.nivel + " 
 
 // Exercício 10 – Escola
 const escola = {
-    nome: "EEEP",
-    cidade: "Fortaleza",
-    turno: "da manhã"
-};
-console.log("A escola " + escola.nome + " funciona na cidade de " + escola.cidade + " no turno " + escola.turno + ".");
+    nome: "sesi",
+    cidade: "Guarulhos"
+
+}
