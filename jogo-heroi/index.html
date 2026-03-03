@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homem-Aranha Jump</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="jogo">
+        <img src="./img/homem aranha.gif" class="homemAranha" alt="Homem-Aranha">
+        <img src="./img/vilao2.gif" class="inimigo" alt="Inimigo">
+        <img src="./img/nuvem.png" class="nuvem" alt="Nuvem">
+        
+        <div class="pontuacao">
+            <span>Pontos:</span>
+            <span id="pontos" class="valor">0</span>
+        </div>
+    </div>
+
+    <div class="gameOverOverlay" id="gameOverOverlay">
+        <div class="gameOverBox">
+            <h1>GAME OVER</h1>
+            <p>Pontuação: <span id="pontuacaoFinal">0</span></p>
+            <button class="botaoReiniciar" id="botaoReiniciar">Reiniciar</button>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px; font-family: Arial;">
+        <p>🕷️ Pressione QUALQUER TECLA ou CLIQUE para pular</p>
+    </div>
+
+</body>
+</html>
