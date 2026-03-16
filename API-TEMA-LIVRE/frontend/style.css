@@ -1,0 +1,229 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo Geral da Página - Fundo Marvel vs DC */
+body {
+    font-family: 'Bangers', cursive; /* Fonte inspirada em quadrinhos */
+    background-image: url(./marvel_vs_dc.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #f0f0f0; /* Cor de texto clara */
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+/* Fundo de Batalha Marvel vs DC */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('marvel_vs_dc.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* Cobrir toda a tela */
+    opacity: 0.2; /* Transparência para o fundo */
+    z-index: -1;
+    pointer-events: none;
+    filter: saturate(1.2) brightness(0.8); /* Ajustes para o fundo */
+}
+
+/* Container Principal - Estilo de HQ */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    border-radius: 10px;
+    padding: 35px;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borda mais definida */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Sombra mais dramática */
+    backdrop-filter: blur(8px); /* Efeito de blur sutil */
+    -webkit-backdrop-filter: blur(8px);
+    color: #e0e0e0;
+    animation: comicEntrance 0.8s ease-out forwards;
+}
+
+@keyframes comicEntrance {
+    from { opacity: 0; transform: scale(0.9) translateY(30px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Título Principal - Estilo de Quadrinhos */
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #FEDC00; /* Amarelo vibrante da Marvel */
+    font-size: 3em;
+    text-shadow: 3px 3px 0px #ED1D24, 6px 6px 0px #1C2B4A; /* Sombra de texto estilo quadrinhos */
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+/* Subtítulo - Estilo de Quadrinhos */
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #90CAF9; /* Azul claro da DC */
+    font-size: 1.3em;
+    font-weight: 400;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Área da Imagem da Seleção */
+.dog-area, .selecao-area {
+    background: rgba(255, 255, 255, 0.05); /* Fundo ainda mais transparente */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem do Jogador/Seleção */
+#jogador-image, #dogImage {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain; /* Para garantir que a imagem inteira apareça */
+    border-radius: 5px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+
+#jogador-image:hover, #dogImage:hover {
+    transform: scale(1.03); /* Leve zoom */
+}
+
+/* Nome da Seleção */
+#breedName {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: linear-gradient(90deg, #ED1D24, #1C2B4A); /* Gradiente Marvel/DC */
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.95em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Área de Botões e Busca */
+.controls, .search {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Botões - Estilo de Ação */
+button {
+    flex: 1;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #ED1D24, #FEDC00); /* Gradiente Marvel */
+    color: white;
+    font-weight: 700;
+    font-size: 1.05em;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:nth-child(2) { /* Segundo botão (Buscar) com tema DC */
+    background: linear-gradient(45deg, #1C2B4A, #0078D4); /* Gradiente DC */
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Efeito de brilho */
+    transform: skewX(-30deg);
+    transition: all 0.5s ease;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Campo de Input - Estilo Tecnológico */
+input {
+    flex: 2;
+    padding: 14px;
+    border-radius: 5px;
+    border: 1px solid #4A4A4A; /* Borda escura */
+    background: rgba(0, 0, 0, 0.6); /* Fundo escuro */
+    color: #E0E0E0;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #A0A0A0;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0078D4; /* Borda azul da DC ao focar */
+    box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Estado de Carregamento */
+.loading {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: "Carregando...";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: #FEDC00; /* Amarelo da Marvel */
+    padding: 15px 30px;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}

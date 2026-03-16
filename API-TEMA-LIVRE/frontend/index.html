@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo de HEROIS: Marvel vs DC</title> <!-- Título atualizado -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Importa a fonte Bangers -->
+</head>
+<body>
+    <div class="container">
+
+        <h1>Explorador de HEROIS</h1>
+        <p class="subtitle">Qual universo você escolhe?</p>
+
+        <!-- Área da seleção -->
+        <div class="selecao-area"> <!-- Alterado de dog-area para selecao-area -->
+            <img src="" alt="Seleção" id="jogador-image">
+            <div id="breedName"></div>
+        </div>
+
+        <!-- Botão aleatório -->
+        <div class="controls">
+            <button id="randomBtn">💥 Seleção Aleatória</button>
+        </div>
+
+        <!-- Busca -->
+        <div class="search">
+            <input
+                type="text"
+                id="breedInput"
+                placeholder="Busque por um herói ou time (ex: Vingadores, Liga da Justiça)"
+            >
+            <button id="searchBtn">⚡ Buscar</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
